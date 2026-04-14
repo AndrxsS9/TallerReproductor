@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  --song-hue: 260;
+  --audio-bass: 0;
+  --audio-mid: 0;
+  
+  --player-height: 96px;
+}
+
+/* ===================================================================== */
+/* DARK THEME (Spotify Inspired)                                         */
+/* ===================================================================== */
+:root.dark {
+  --bg-app: #000000;
+  --bg-main: #121212;
+  --bg-player: #000000;
+  --bg-elevated: #282828;
+  --bg-hover: #ffffff1a;
+  --bg-active: #ffffff33;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #6a6a6a;
+
+  --border: rgba(255, 255, 255, 0.08);
+  
+  --accent: hsl(var(--song-hue), 70%, 55%);
+  --accent-glow: hsla(var(--song-hue), 70%, 55%, 0.3);
+  
+  --btn-base: #1ed760; /* Spotify default green fallback */
+}
+
+/* ===================================================================== */
+/* LIGHT THEME (Apple Music / Light inspired)                            */
+/* ===================================================================== */
+:root.light {
+  --bg-app: #f4f4f5;
+  --bg-main: #ffffff;
+  --bg-player: #ffffff;
+  --bg-elevated: #e4e4e7;
+  --bg-hover: rgba(0,0,0,0.06);
+  --bg-active: rgba(0,0,0,0.1);
+
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-tertiary: #a1a1aa;
+
+  --border: rgba(0, 0, 0, 0.08);
+  
+  --accent: hsl(var(--song-hue), 70%, 45%);
+  --accent-glow: hsla(var(--song-hue), 70%, 45%, 0.2);
+  
+  --btn-base: #1db954;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
